@@ -524,6 +524,8 @@ useEffect(() => {
       setNotes(response.data)
     })
 }, [])
+  // No way! the axios callback must not be executed if the component has meanwhile been unmounted!
+  // Consider especially <React.StrictMode> !
 ```
 
 We still have a problem in our application. When adding new notes, they are not stored on the server.
